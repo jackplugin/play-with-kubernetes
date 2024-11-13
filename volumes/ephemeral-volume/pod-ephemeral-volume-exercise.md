@@ -68,3 +68,10 @@ ls /var/lib/kubelet/pods/f029a915-33a2-454a-b697-f611248ab24f/volumes/kubernetes
 # ls: cannot access '/var/lib/kubelet/pods/f029a915-33a2-454a-b697-f611248ab24f/volumes/kubernetes.io~empty-dir/tmp-volume': No such file or directory
 
 ```
+
+## Summary
+
+1. An emptyDir volume is created on the node where the pod is running and is tied to the pod's lifecycle.
+2. An emptyDir volume only exists as long as the pod is running on that specific node.
+3. When the pod is deleted or rescheduled to another node, the emptyDir data is lost, and a new, empty directory is created if the pod restarts.
+4. An emptyDir volume is scoped to individual pod and is not designed for sharing data between multiple pods. But it is designed for sharing data between multiple containers within the same pod.

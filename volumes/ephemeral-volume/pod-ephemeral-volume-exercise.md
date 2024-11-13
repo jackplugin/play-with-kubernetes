@@ -1,10 +1,9 @@
-# Excerises: Verify the behavior of ephemeral volumes (emptyDir) on a single node cluster.
+# Excerises: Verify the behavior of ephemeral volumes (emptyDir) on a single node cluster
 
 ## Main Points
 
 1. The actual location of an Ephemeral volume (emptyDir) is a folder of the node where the current pod is running.
 2. If the pod is deleted, the corresponding folder (actual storage location) will be deleted.
-
 
 ```text
 # single node cluster created through minikube
